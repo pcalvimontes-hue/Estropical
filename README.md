@@ -42,8 +42,6 @@ Para acceder a la versión en línea, usa el siguiente enlace (una vez activado)
 
 👉 https://pcalvimontes-hue.github.io/Estropical/
 
-(Reemplaza “tuusuario” por tu nombre de usuario de GitHub cuando lo actives)
-
 💬 Contacto
 
 📧 Correo: pcalvimontes@gmail.com
