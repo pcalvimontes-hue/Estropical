@@ -1,8 +1,6 @@
 ✈️ Estropical – Landing Page Profesional
 
 Desarrollado por: Paola Andrea Calvimontes Gutiérrez
-Estrategia y Promoción Digital II
-Gestión: 2025
 
 🌍 Descripción del proyecto
 
