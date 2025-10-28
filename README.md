@@ -40,7 +40,7 @@ Potenciar la presencia digital de EStropical en canales online.
 Este proyecto está alojado en GitHub Pages, lo que permite visualizarlo como una web real.
 Para acceder a la versión en línea, usa el siguiente enlace (una vez activado):
 
-👉 https://tuusuario.github.io/estropical
+👉 https://pcalvimontes-hue.github.io/Estropical/
 
 (Reemplaza “tuusuario” por tu nombre de usuario de GitHub cuando lo actives)
 
