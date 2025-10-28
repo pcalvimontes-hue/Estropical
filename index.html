@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EStropical | Tu próximo viaje empieza aquí</title>
+  <style>
+    :root{
+      --azul: #0052CC;
+      --rojo: #FF2B4A;
+      --blanco: #ffffff;
+      --gris: #f4f6fb;
+      --verde-wa: #25D366;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(135deg, rgba(0,82,204,0.08) 0%, rgba(255,43,74,0.04) 100%);
+      color:#1b2533;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* HEADER */
+    header{
+      position:relative;
+      text-align:center;
+      padding:56px 20px 40px;
+    }
+    header .logo{
+      position:absolute;
+      left:24px;
+      top:18px;
+      width:160px;
+      height:auto;
+    }
+    header h1{
+      margin:18px 0 6px;
+      font-size:28px;
+      color:var(--azul);
+      font-weight:700;
+    }
+    header p{
+      margin:0 0 14px;
+      color:#334155;
+      font-size:16px;
+    }
+    .cta-primary{
+      display:inline-block;
+      background:var(--azul);
+      color:var(--blanco);
+      padding:12px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 6px 18px rgba(5,56,120,0.12);
+    }
+    .cta-primary:hover{ transform:translateY(-2px) }
+
+    /* HERO VISUAL */
+    .hero{
+      width:100%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:12px;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .hero-left{
+      flex:1 1 540px;
+      padding:18px 12px;
+    }
+    .hero-left h2{
+      font-size:34px;
+      color:var(--azul);
+      margin:0 0 12px;
+    }
+    .hero-left p{ margin:0 0 18px; color:#334155; font-size:16px }
+
+    .hero-right{
+      flex:0 0 520px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* FORM CARD */
+    .form-card{
+      background:var(--blanco);
+      border-radius:16px;
+      padding:26px;
+      width:100%;
+      max-width:480px;
+      box-shadow:0 18px 50px rgba(5,56,120,0.12);
+      transform:translateY(-10px);
+    }
+    .form-card h3{ color:var(--azul); margin:0 0 8px; font-size:20px }
+    .form-card p{ margin:0 0 14px; color:#475569; font-size:14px }
+    .form-field{ margin-bottom:10px; }
+    input, textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid #e6eef9;
+      font-size:14px;
+      outline:none;
+    }
+    textarea{ min-height:96px; resize:vertical }
+    .btn-send{
+      width:100%;
+      display:inline-block;
+      padding:12px 14px;
+      border-radius:10px;
+      border:none;
+      background:linear-gradient(90deg,var(--azul),var(--rojo));
+      color:var(--blanco);
+      font-weight:700;
+      cursor:pointer;
+      margin-top:8px;
+    }
+
+    /* OFFERS GRID */
+    .offers{
+      max-width:1200px;
+      margin:28px auto 40px;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+    }
+    .offer{
+      background:var(--blanco);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:0 8px 20px rgba(9,30,66,0.06);
+      text-align:left;
+    }
+    .offer img{ width:100%; border-radius:8px; display:block; margin-bottom:10px }
+    .offer h4{ margin:0 0 6px; color:var(--azul); font-size:16px }
+    .offer p{ margin:0 0 10px; color:#475569; font-size:14px }
+    .offer .small-cta{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:8px;
+      background:var(--rojo);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* TESTIMONIOS */
+    .testimonials{
+      max-width:1000px;
+      margin:36px auto;
+      padding:18px 20px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .testimonial{
+      background:rgba(255,255,255,0.85);
+      border-radius:12px;
+      padding:14px;
+      width:320px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.06);
+    }
+    .testimonial p{ margin:0; color:#0f1724 }
+
+    /* FOOTER */
+    footer{
+      margin-top:36px;
+      padding:26px 18px;
+      text-align:center;
+      color:#f8fafc;
+    }
+    footer small{ display:block; color:#e6eef9; margin-top:8px }
+
+    /* WHATSAPP FLOAT */
+    .wa-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:var(--verde-wa);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-decoration:none;
+      box-shadow:0 8px 24px rgba(2,6,23,0.18);
+      z-index:9999;
+      font-size:28px;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{ flex-direction:column; gap:18px; align-items:stretch }
+      .hero-right{ order:-1 }
+      header h1{ font-size:22px }
+      .form-card{ padding:20px }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Logo incluido en el paquete -->
+    <img class="logo" src="logo_final.png" alt="EStropical logo">
+    <h1>Tu próximo viaje empieza aquí con <strong style="color:var(--azul)">EStropical</strong></h1>
+    <p>Paquetes internacionales personalizados — Caribe, Disney, Sudamérica, Europa y más.</p>
+    <a class="cta-primary" href="#formulario">Cotiza tu viaje ahora</a>
+  </header>
+
+  <!-- HERO con formulario a la derecha -->
+  <div class="hero" role="main">
+    <div class="hero-left">
+      <h2>¿Listo para viajar? Diseñamos tu paquete ideal.</h2>
+      <p>Asesoría personalizada, precios en bolivianos y opciones para familias, parejas y grupos. Reserva con seguridad y atención 24/7.</p>
+
+      <!-- ofertas resumidas -->
+      <div class="offers" aria-hidden="true">
+        <div class="offer">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Caribe">
+          <h4>🌴 Caribe — desde Bs. 5.890</h4>
+          <p>7 días, hotel + vuelo opcional. Sol y relax garantizados.</p>
+          <a class="small-cta" href="#formulario">Cotiza ahora</a>
+        </div>
+        <div class="offer">
+          <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1200&auto=format&fit=crop" alt="Disney">
+          <h4>🎢 Disney — desde Bs. 7.450</h4>
+          <p>Paquete familiar con entradas y hotel incluidos.</p>
+          <a class="small-cta" href="#formulario">Ver detalles</a>
+        </div>
+        <div class="offer">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Brasil">
+          <h4>🇧🇷 Brasil — desde Bs. 3.950</h4>
+          <p>Playas y cultura, paquetes flexibles para grupos.</p>
+          <a class="small-cta" href="#formulario">Reserva tu viaje</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="form-card" id="formulario" aria-label="Formulario de cotización">
+        <h3>📩 Solicita tu cotización</h3>
+        <p>Completa los datos y te contactamos por WhatsApp en minutos.</p>
+
+        <form onsubmit="enviarWhatsApp(event)" id="cotizaForm">
+          <div class="form-field"><input id="nombre" type="text" placeholder="Nombre completo" required></div>
+          <div class="form-field"><input id="destino" type="text" placeholder="Destino de interés (ej. Caribe, Disney)" required></div>
+          <div class="form-field"><input id="fecha" type="date" placeholder="Fecha aproximada"></div>
+          <div class="form-field"><input id="telefono" type="tel" placeholder="Teléfono / WhatsApp (ej. 62396520)" required></div>
+          <div class="form-field"><textarea id="mensaje" placeholder="Cuéntanos más sobre tu viaje (opcional)"></textarea></div>
+          <button class="btn-send" type="submit">✈️ Enviar por WhatsApp</button>
+        </form>
+
+        <small style="display:block;margin-top:10px;color:#64748b">También respondemos por WhatsApp en: <strong>+591 62396520</strong></small>
+      </div>
+    </div>
+  </div>
+
+  <!-- testimonios -->
+  <section class="testimonials" aria-label="Testimonios">
+    <div class="testimonial"><p>“Gracias a EStropical vivimos el mejor viaje de nuestras vidas.” 💙</p></div>
+    <div class="testimonial"><p>“Nuestra luna de miel fue perfecta, todo estaba organizado y seguro.” ✨</p></div>
+    <div class="testimonial"><p>“Cada detalle estuvo cuidado. Sin duda, volvería a viajar con ellos.” 🌴</p></div>
+  </section>
+
+  <footer>
+    <p style="color:#fff; font-weight:600">Miles de viajeros ya confían en EStropical</p>
+    <small>© 2025 EStropical · Asesoría y venta de viajes internacionales</small>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/59162396520?text=Hola%20EStropical!%20Quisiera%20más%20info%20sobre%20un%20viaje%20✈️" target="_blank" aria-label="Contactar por WhatsApp">
+    💬
+  </a>
+
+  <script>
+    function enviarWhatsApp(e){
+      e.preventDefault();
+      const nombre = encodeURIComponent(document.getElementById('nombre').value || '');
+      const destino = encodeURIComponent(document.getElementById('destino').value || '');
+      const fecha = encodeURIComponent(document.getElementById('fecha').value || '');
+      const telefono = encodeURIComponent(document.getElementById('telefono').value || '');
+      const mensaje = encodeURIComponent(document.getElementById('mensaje').value || '');
+      const texto = `Hola EStropical 👋%0AMi nombre es *${nombre}*.%0AEstoy interesado en viajar a *${destino}*%0A📅 Fecha: ${fecha}%0A📞 Teléfono: ${telefono}%0A💬 ${mensaje}`;
+      window.open('https://wa.me/59162396520?text=' + texto, '_blank');
+    }
+  </script>
+</body>
+</html>
